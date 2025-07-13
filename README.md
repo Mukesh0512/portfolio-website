@@ -65,7 +65,7 @@ npm run dev
 
 ## 🌐 Live Website
 
-🔗 [https://mukeshsoni.vercel.app](https://mukeshsoni.vercel.app)
+🔗 [https://mukeshsoni.vercel.app](https://portfolio-website-inky-eight-27.vercel.app)
 
 ---
 
