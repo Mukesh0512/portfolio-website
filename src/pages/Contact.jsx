@@ -1,29 +1,98 @@
-import React from 'react';
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_lxvgt4g", // replace with your EmailJS service ID
+        "template_7rydk7j", // replace with your EmailJS template ID
+        form.current,
+        "iquJRR4HL3n2j8LDp" // replace with your EmailJS public key
+      )
+      .then(
+        (result) => {
+          alert("Message sent successfully!");
+          form.current.reset();
+        },
+        (error) => {
+          console.error("Failed to send email:", error.text);
+          alert("Oops! Something went wrong.");
+        }
+      );
+  };
+
   return (
-    <section className="min-h-screen py-16 px-6 bg-white text-gray-800">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl font-bold text-center text-blue-700 mb-8">Contact Me</h2>
-        <form className="space-y-6">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white p-8">
+      <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-lg p-10">
+        <h2 className="text-3xl font-bold text-gray-800 mb-6">Contact Me</h2>
+
+        <form ref={form} onSubmit={sendEmail} className="space-y-6">
           <div>
-            <label className="block text-sm font-medium mb-1">Your Name</label>
-            <input type="text" className="w-full border border-gray-300 px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-400" />
+            <label className="block mb-2 text-sm font-medium text-gray-700">
+              Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              required
+              className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-indigo-300"
+              placeholder="Your Name"
+            />
           </div>
+
           <div>
-            <label className="block text-sm font-medium mb-1">Email Address</label>
-            <input type="email" className="w-full border border-gray-300 px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-400" />
+            <label className="block mb-2 text-sm font-medium text-gray-700">
+              Email
+            </label>
+            <input
+              type="email"
+              name="email"
+              required
+              className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-indigo-300"
+              placeholder="Your Email"
+            />
           </div>
+
           <div>
-            <label className="block text-sm font-medium mb-1">Your Message</label>
-            <textarea className="w-full border border-gray-300 px-4 py-2 rounded-md focus:ring-2 focus:ring-blue-400" rows="5"></textarea>
+            <label className="block mb-2 text-sm font-medium text-gray-700">
+              Subject
+            </label>
+            <input
+              type="text"
+              name="subject"
+              required
+              className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-indigo-300"
+              placeholder="Subject"
+            />
           </div>
-          <button type="submit" className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">
+
+          <div>
+            <label className="block mb-2 text-sm font-medium text-gray-700">
+              Message
+            </label>
+            <textarea
+              name="message"
+              required
+              rows="6"
+              className="w-full px-4 py-2 border rounded-md focus:ring focus:ring-indigo-300"
+              placeholder="Your message..."
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            className="px-6 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700 transition"
+          >
             Send Message
           </button>
         </form>
       </div>
-    </section>
+    </div>
   );
 };
 

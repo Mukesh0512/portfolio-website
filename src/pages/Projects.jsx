@@ -1,37 +1,35 @@
-import React from 'react';
-import ProjectCard from '../components/ProjectCard';
-
-const dummyProjects = [
-  {
-    title: 'Creative Landing Page',
-    image: '/images/project1.jpg',
-    description: 'A sleek marketing landing page using Tailwind and GSAP animations.',
-    link: 'https://example.com/project1',
-  },
-  {
-    title: 'E-Commerce Dashboard',
-    image: '/images/project2.jpg',
-    description: 'React + Tailwind dashboard with charts, filters, and responsive layout.',
-    link: 'https://example.com/project2',
-  },
-  {
-    title: 'Portfolio Website',
-    image: '/images/project3.jpg',
-    description: 'A fully responsive portfolio website (like this one!).',
-    link: 'https://example.com/project3',
-  },
-];
+import React, { useEffect, useState } from "react";
 
 const Projects = () => {
+  const [repos, setRepos] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.github.com/users/Mukesh0512/repos")
+      .then((res) => res.json())
+      .then((data) => {
+        const filtered = data.filter(repo => !repo.fork); // optional: skip forks
+        setRepos(filtered);
+      });
+  }, []);
+
   return (
-    <section className="bg-gray-50 py-16 px-6 min-h-screen">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center text-blue-700 mb-10">My Projects</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {dummyProjects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
-          ))}
-        </div>
+    <section className="min-h-screen p-8 bg-gray-100 text-gray-900">
+      <h2 className="text-3xl font-bold mb-6 text-center">My GitHub Projects</h2>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {repos.map((repo) => (
+          <div key={repo.id} className="p-5 bg-white shadow rounded hover:shadow-lg transition">
+            <h3 className="text-xl font-semibold">{repo.name}</h3>
+            <p className="text-gray-600">{repo.description || "No description provided."}</p>
+            <a
+              href={repo.html_url}
+              target="_blank"
+              rel="noreferrer"
+              className="text-indigo-600 mt-2 inline-block"
+            >
+              View Repo →
+            </a>
+          </div>
+        ))}
       </div>
     </section>
   );
