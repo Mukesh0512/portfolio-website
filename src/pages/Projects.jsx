@@ -1,6 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
+import Seo from '../components/Seo';
+
+<Seo
+  title="Mukesh Soni | Full Stack Developer"
+  description="Portfolio of Mukesh Soni – React, Node.js, Tailwind CSS developer."
+  image="https://ogimage.vercel.app/**Er.%20Mukesh%20Soni**.png?theme=dark&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fvercel-triangle-white.svg&widths=auto"
+
+  url="https://portfolio-website-inky-eight-27.vercel.app/"
+/>
+
+
 const Projects = () => {
   const [repos, setRepos] = useState([]);
 
