@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const [repos, setRepos] = useState([]);
@@ -13,23 +14,38 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="min-h-screen p-8 bg-gray-100 text-gray-900">
-      <h2 className="text-3xl font-bold mb-6 text-center">My GitHub Projects</h2>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {repos.map((repo) => (
-          <div key={repo.id} className="p-5 bg-white shadow rounded hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold">{repo.name}</h3>
-            <p className="text-gray-600">{repo.description || "No description provided."}</p>
-            <a
-              href={repo.html_url}
-              target="_blank"
-              rel="noreferrer"
-              className="text-indigo-600 mt-2 inline-block"
+    <section
+      className="min-h-screen p-10 bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] text-white relative"
+      style={{
+        backgroundImage: 'url(https://www.transparenttextures.com/patterns/3px-tile.png)',
+        backgroundBlendMode: 'overlay'
+      }}
+    >
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl font-bold mb-6 text-center text-black">My GitHub Projects</h2>
+
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+          {repos.map((repo) => (
+            <motion.div
+              key={repo.id}
+              whileHover={{ scale: 1.05 }}
+              className="bg-white text-gray-800 rounded-2xl shadow-lg p-6 transform transition-transform hover:shadow-xl"
             >
-              View Repo →
-            </a>
-          </div>
-        ))}
+              <h3 className="text-2xl font-semibold mb-2 text-indigo-700">{repo.name}</h3>
+              <p className="text-gray-600 mb-4 min-h-[60px]">
+                {repo.description || "No description provided."}
+              </p>
+              <a
+                href={repo.html_url}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition"
+              >
+                View on GitHub
+              </a>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

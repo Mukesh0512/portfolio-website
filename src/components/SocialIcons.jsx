@@ -1,50 +1,42 @@
-import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+// src/components/SocialIcons.jsx
+import React from "react";
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 
-const SocialLinks = () => {
-  const links = [
-    {
-      id: 1,
-      icon: <FaGithub size={24} />,
-      href: 'https://github.com/Mukesh0512',
-      label: 'GitHub',
-    },
-    {
-      id: 2,
-      icon: <FaLinkedin size={24} />,
-      href: 'https://www.linkedin.com/in/mukesh-soni',
-      label: 'LinkedIn',
-    },
-    {
-      id: 3,
-      icon: <FaTwitter size={24} />,
-      href: 'https://twitter.com/your_handle',
-      label: 'Twitter',
-    },
-    {
-      id: 4,
-      icon: <FaEnvelope size={24} />,
-      href: 'mailto:youremail@example.com',
-      label: 'Email',
-    },
-  ];
-
+const SocialIcons = () => {
   return (
-    <div className="flex justify-center gap-6 mt-6">
-      {links.map(({ id, icon, href, label }) => (
-        <a
-          key={id}
-          href={href}
-          className="text-gray-600 hover:text-indigo-500 transition-colors"
-          target="_blank"
-          rel="noreferrer"
-          aria-label={label}
-        >
-          {icon}
-        </a>
-      ))}
+    <div className="flex gap-4 justify-center mt-6">
+      <a
+        href="https://github.com/Mukesh0512"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-gray-600 hover:text-black text-2xl transition-transform transform hover:scale-110"
+      >
+        <FaGithub />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/er-mukesh-kumar-soni-194284207/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-600 hover:text-blue-800 text-2xl transition-transform transform hover:scale-110"
+      >
+        <FaLinkedin />
+      </a>
+      <a
+        href="https://x.com/Mukesh8963"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-400 hover:text-blue-600 text-2xl transition-transform transform hover:scale-110"
+      >
+        <FaTwitter />
+      </a>
+      <a
+        href="mailto:mukeshkumarsoni990@gmail.com"
+        className="text-red-500 hover:text-red-700 text-2xl transition-transform transform hover:scale-110"
+      >
+        <FaEnvelope />
+      </a>
     </div>
   );
 };
 
-export default SocialLinks;
+export default SocialIcons;
