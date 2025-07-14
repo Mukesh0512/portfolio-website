@@ -34,7 +34,7 @@ src/
 - 🧪 Project data pulled dynamically from GitHub
 - 📱 Mobile-first responsive design
 - 💼 Custom thumbnails for each project
-- 📧 Functional contact form (coming soon)
+- 📧 Functional contact form
 - 🌍 Deployed with [Vercel](https://vercel.com)
 
 ---
@@ -73,7 +73,7 @@ npm run dev
 
 Want to collaborate or hire me?
 
-📧 mukesh.soni@example.com  
+📧 mukeshkumarsoni990@gmail.com  
 💼 [LinkedIn](https://linkedin.com/in/mukeshsoni)  
 🐙 [GitHub](https://github.com/Mukesh0512)
 

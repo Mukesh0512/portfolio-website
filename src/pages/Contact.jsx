@@ -1,13 +1,6 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
-
-import { toast } from 'react-toastify'
-
-toast.success("Message sent successfully!")
-toast.error("Something went wrong!")
-
-
-
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const form = useRef();
@@ -17,19 +10,19 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_lxvgt4g", // replace with your EmailJS service ID
-        "template_7rydk7j", // replace with your EmailJS template ID
+        "service_lxvgt4g", // ✅ Your EmailJS service ID
+        "template_7rydk7j", // ✅ Your EmailJS template ID
         form.current,
-        "iquJRR4HL3n2j8LDp" // replace with your EmailJS public key
+        "iquJRR4HL3n2j8LDp" // ✅ Your EmailJS public key
       )
       .then(
         (result) => {
-          alert("Message sent successfully!");
+          toast.success("Message sent successfully!");
           form.current.reset();
         },
         (error) => {
           console.error("Failed to send email:", error.text);
-          alert("Oops! Something went wrong.");
+          toast.error("Oops! Something went wrong. Try again.");
         }
       );
   };
