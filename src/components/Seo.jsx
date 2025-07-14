@@ -1,25 +1,29 @@
+// src/components/Seo.jsx
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const Seo = ({ title, description, image, url }) => (
-  <Helmet>
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="author" content="Mukesh Soni" />
-    <meta name="keywords" content="Mukesh Soni, Full Stack Developer, React, Node, Portfolio, Tailwind, Web Dev, Freelancer, JavaScript, Vite" />
+const Seo = ({ title, description, image, url }) => {
+  return (
+    <Helmet>
+      <title>{title}</title>
+      <meta name="description" content={description} />
 
-    {/* Open Graph */}
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:url" content={url} />
-    <meta property="og:type" content="website" />
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={url} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={image} />
 
-    {/* Twitter Card */}
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
-  </Helmet>
-);
+      {/* Twitter */}
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content={url} />
+      <meta property="twitter:title" content={title} />
+      <meta property="twitter:description" content={description} />
+      <meta property="twitter:image" content={image} />
+    </Helmet>
+  );
+};
 
 export default Seo;
+
