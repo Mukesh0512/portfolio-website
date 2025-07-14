@@ -69,12 +69,16 @@ npm run dev
 
 ---
 
+### 🚀 Portfolio
+🔗 [Check out my live portfolio](https://portfolio-website-inky-eight-27.vercel.app/)
+
+
 ## 📬 Contact Me
 
 Want to collaborate or hire me?
 
 📧 mukeshkumarsoni990@gmail.com  
-💼 [LinkedIn](https://linkedin.com/in/mukeshsoni)  
+💼 [LinkedIn](https://www.linkedin.com/in/er-mukesh-kumar-soni-194284207/)  
 🐙 [GitHub](https://github.com/Mukesh0512)
 
 ---
