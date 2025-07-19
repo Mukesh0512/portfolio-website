@@ -2,6 +2,13 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 
+const liveLinks = {
+  "portfolio-website": "https://portfolio-website-inky-eight-27.vercel.app/",
+  "Molecule-housing-market": "https://molecule-housing-market.web.app/",
+  // Add more repo names and links here
+};
+
+
 
 
 const Projects = () => {
@@ -47,7 +54,7 @@ const Projects = () => {
                 View on GitHub
               </a>
               <a
-                href={liveLinks[repo.name]}
+                href={liveLink}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-block px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
