@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 const liveLinks = {
   "portfolio-website": "https://portfolio-website-inky-eight-27.vercel.app/",
   "Molecule-Housing-Market": "https://molecule-housing-market.web.app/",
-  "Simple-interest-calculator": "https://simple-interest-calculator-tan.vercel.app/"
+  "Simple-interest-calculator": "https://simple-interest-calculator-tan.vercel.app/",
+  "Virtual-Assistant-by-using-Python": "https://virtual-assistant-by-using-python.onrender.com/"
   // Add more repo names and links here
 };
 
