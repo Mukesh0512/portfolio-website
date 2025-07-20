@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -11,9 +12,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -39,4 +42,30 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* 🚀 Mobile responsiveness */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .logo {
+    height: 4em;
+    padding: 1em;
+  }
+
+  .card {
+    padding: 1.5em 1em;
+  }
+
+  h1, h2, h3, p {
+    font-size: 1rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
+
+  a {
+    font-size: 0.95rem;
+  }
 }
