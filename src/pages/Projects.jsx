@@ -7,7 +7,7 @@ const liveLinks = {
   "Molecule-Housing-Market": "https://molecule-housing-market.web.app/",
   "Simple-interest-calculator": "https://simple-interest-calculator-tan.vercel.app/",
   "Virtual-Assistant-by-using-Python": "https://virtual-assistant-by-using-python.onrender.com/",
-  "BMI-Calculator": "https://ai-bmi-calculator.netlify.app/"
+  "BMI-calculator": "https://ai-bmi-calculator.netlify.app/"
   // Add more repo names and links here
 };
 
